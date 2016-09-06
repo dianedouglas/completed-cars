@@ -37,6 +37,10 @@
                         <label for='price'>Enter Maximum Price:</label>
                         <input id='price' name='price' class='form-control' type='number'>
                     </div>
+                    <div class='form-group'>
+                        <label for='mileage'>Enter Maximum Mileage:</label>
+                        <input id='mileage' name='mileage' class='form-control' type='number'>
+                    </div>
                     <button type='submit' class='btn-success'>Submit</button>
                 </form>
             </div>
@@ -58,6 +62,7 @@
 
         // get price from form input field same as in old Car.php
         $user_price = $_GET["price"]; 
+        $user_mileage = $_GET["mileage"]; 
         // create array to hold the cars that match the search criteria.
         $cars_matching_search = array();
         foreach ($cars as $car) {
@@ -81,7 +86,7 @@
             $output .= "<img src='". $picture ."'>";
           }
 
-        return $output;
+        return $output . "<br><br>" . $user_mileage;
     });
 
     return $app;
