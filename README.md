@@ -16,7 +16,7 @@ Remember that you can click on the number of commits to view the history with al
 
 Then you can click on a single commit's `<>` button on the far right to click around in the repository at that point in time.
 
-<img src="clickcommit.png">
+<img src="explorecommit.png">
 
 ## Your Steps
 
