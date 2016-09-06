@@ -4,11 +4,13 @@ class Car
     private $make_model;
     private $price;
     private $miles;
-    function __construct($input_model, $input_miles, $input_price)
+    private $picture;
+    function __construct($input_model, $input_miles, $input_price, $input_picture)
     {
         $this->price = $input_price;
         $this->miles = $input_miles;
         $this->make_model = $input_model;
+        $this->picture = $input_picture;
     }
     function getPrice()
     {
@@ -21,6 +23,14 @@ class Car
     function getModel()
     {
         return $this->make_model;
+    }
+    function getPicture()
+    {
+        return $this->picture;
+    }
+    function setPicture($new_picture)
+    {
+        $this->picture = (string) $new_picture;
     }
     function setPrice($new_price)
     {
