@@ -66,7 +66,7 @@
         // create array to hold the cars that match the search criteria.
         $cars_matching_search = array();
         foreach ($cars as $car) {
-            if ($car->worthBuying($user_price)) {
+            if ($car->worthBuying($user_price, $user_mileage)) {
                 array_push($cars_matching_search, $car);
             }
         }
@@ -86,7 +86,7 @@
             $output .= "<img src='". $picture ."'>";
           }
 
-        return $output . "<br><br>" . $user_mileage;
+        return $output;
     });
 
     return $app;

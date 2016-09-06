@@ -44,8 +44,10 @@ class Car
     {
         $this->make_model = (string) $new_model;
     }
-    function worthBuying($max_price)
+    function worthBuying($max_price, $max_mileage)
     {
-        return $this->price < ($max_price + 100);
+        if ($this->price < ($max_price + 100) && $this->miles < $max_mileage) {
+            return true;
+        }
     }
 }
