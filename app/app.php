@@ -75,7 +75,7 @@
 
         // display the cars that match the search instead of all the cars in the $cars array.
 
-          foreach ($cars_matching_search as $car) {
+        foreach ($cars_matching_search as $car) {
             $model = $car->getModel();
             $price = $car->getPrice();
             $miles = $car->getMiles();
@@ -84,7 +84,11 @@
             $output .= "<p> with only " . $miles . " miles on it, </p>"; 
             $output .= "<p>and it only costs: $" . $price . "!</p>"; 
             $output .= "<img src='". $picture ."'>";
-          }
+        }
+
+        if(empty($cars_matching_search)) {
+            $output = "Sorry, no cars match your search. Try again!";
+        }
 
         return $output;
     });
