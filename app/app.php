@@ -55,9 +55,22 @@
         $mercedes = new Car("Mercedes Benz CLS550", 37979, 39900, "http://media.caranddriver.com/images/11q3/410461/2012-mercedes-benz-cls550-photo-410479-s-429x262.jpg");
 
         $cars = array($porsche, $ford, $lexus, $mercedes);
+
+        // get price from form input field same as in old Car.php
+        $user_price = $_GET["price"]; 
+        // create array to hold the cars that match the search criteria.
+        $cars_matching_search = array();
+        foreach ($cars as $car) {
+            if ($car->worthBuying($user_price)) {
+                array_push($cars_matching_search, $car);
+            }
+        }
+
         $output = '';
 
-          foreach ($cars as $car) {
+        // display the cars that match the search instead of all the cars in the $cars array.
+
+          foreach ($cars_matching_search as $car) {
             $model = $car->getModel();
             $price = $car->getPrice();
             $miles = $car->getMiles();
