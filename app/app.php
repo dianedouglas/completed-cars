@@ -22,28 +22,28 @@
     });
 
     $app->get("/cars", function() {
-      // Create car objects just as we did in the old version of Car.php
-      // But this time use the constructor, and add images.
-      $porsche = new Car("2014 Porsche 911", 7864, 114991, "http://starmoz.com/images/porsche-911-2014-14.jpg");
-      $ford = new Car("2011 Ford F450", 14241, 55995, "https://i.ytimg.com/vi/Mw5J4twknwg/hqdefault.jpg");
-      $lexus = new Car("2013 Lexus RX 350", 20000, 44700, "http://spidercars.net/wp-content/uploads/images/2013-Lexus-RX-350_4823.jpg");
-      $mercedes = new Car("Mercedes Benz CLS550", 37979, 39900, "http://media.caranddriver.com/images/11q3/410461/2012-mercedes-benz-cls550-photo-410479-s-429x262.jpg");
+        // Create car objects just as we did in the old version of Car.php
+        // But this time use the constructor, and add images.
+        $porsche = new Car("2014 Porsche 911", 7864, 114991, "http://starmoz.com/images/porsche-911-2014-14.jpg");
+        $ford = new Car("2011 Ford F450", 14241, 55995, "https://i.ytimg.com/vi/Mw5J4twknwg/hqdefault.jpg");
+        $lexus = new Car("2013 Lexus RX 350", 20000, 44700, "http://spidercars.net/wp-content/uploads/images/2013-Lexus-RX-350_4823.jpg");
+        $mercedes = new Car("Mercedes Benz CLS550", 37979, 39900, "http://media.caranddriver.com/images/11q3/410461/2012-mercedes-benz-cls550-photo-410479-s-429x262.jpg");
 
-      $cars = array($porsche, $ford, $lexus, $mercedes);
-      $output = '';
+        $cars = array($porsche, $ford, $lexus, $mercedes);
+        $output = '';
 
-        foreach ($cars as $car) {
-          $model = $car->getModel();
-          $price = $car->getPrice();
-          $miles = $car->getMiles();
-          $picture = $car->getPicture();
-          $output .= "<h3> Here is a " . $model . "</h3>"; 
-          $output .= "<p> with only " . $miles . " miles on it, </p>"; 
-          $output .= "<p>and it only costs: $" . $price . "!</p>"; 
-          $output .= "<img src='". $picture ."'>";
-        }
+          foreach ($cars as $car) {
+            $model = $car->getModel();
+            $price = $car->getPrice();
+            $miles = $car->getMiles();
+            $picture = $car->getPicture();
+            $output .= "<h3> Here is a " . $model . "</h3>"; 
+            $output .= "<p> with only " . $miles . " miles on it, </p>"; 
+            $output .= "<p>and it only costs: $" . $price . "!</p>"; 
+            $output .= "<img src='". $picture ."'>";
+          }
 
-      return $output;
+        return $output;
     });
 
     return $app;
